@@ -1,5 +1,6 @@
 #!/bin/bash
 
+apt-get update
 # Install common plugins.
 apt-get install -y --reinstall --allow-downgrades  build-essential libevent-dev ncurses-dev vim
 
@@ -20,8 +21,12 @@ pushd ${HOST_TMP_DIR}
   make install
 popd
 rm -r ${HOST_TMP_DIR}
+cp tmux.conf $HOME/.tmux.conf
+
+apt-get install -y --reinstall --allow-downgrades vim
+cp vimrc $HOME/.vimrc
+git clone https://github.com/preservim/nerdtree.git ~/.vim/pack/vendor/start/nerdtree
+vim -u NONE -c "helptags ~/.vim/pack/vendor/start/nerdtree/doc" -c q
 
 # Set configurations.
 cp bashrc $HOME/.bashrc
-cp vimrc $HOME/.vimrc
-cp tmux.conf $HOME/.tmux.conf
