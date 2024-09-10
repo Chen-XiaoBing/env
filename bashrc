@@ -113,3 +113,7 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+
+# bound `C-w` to kill (cut) the word or filename before the cursor.
+stty werase undef
+bind '\C-w:unix-filename-rubout'
