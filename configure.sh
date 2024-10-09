@@ -27,6 +27,17 @@ apt-get install -y --reinstall --allow-downgrades vim
 cp vimrc $HOME/.vimrc
 git clone https://github.com/preservim/nerdtree.git ~/.vim/pack/vendor/start/nerdtree
 vim -u NONE -c "helptags ~/.vim/pack/vendor/start/nerdtree/doc" -c q
+git clone https://github.com/Yggdroot/LeaderF
+pushd LeaderF
+  bash install.sh
+  cp -r plugin ~/.vim/
+  cp -r autoload ~/.vim/
+  cp -r syntax ~/.vim/
+  cp -r doc ~/.vim/
+popd
+rm -r LeaderF
+apt-get install ripgrep
+
 
 # Set configurations.
 cp bashrc $HOME/.bashrc

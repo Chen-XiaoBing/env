@@ -81,3 +81,8 @@ augroup END
 map ; :
 
 nnoremap <C-t> :NERDTreeToggle<CR>
+
+" disable showing icons LeaderF which needs special fonts.
+let g:Lf_ShowDevIcons = 0
+nnoremap <leader>F :Leaderf rg<CR>
+noremap <S-F> :<C-U><C-R>=printf("Leaderf! rg -e %s ", expand("<cword>"))<CR>

@@ -117,3 +117,6 @@ fi
 # bound `C-w` to kill (cut) the word or filename before the cursor.
 stty werase undef
 bind '\C-w:unix-filename-rubout'
+
+export PS1="\[\e[32m\]\u@\[\e[m\]:\[\e[34m\]\w\[\e[m\]\$ "
+export RAY_DEDUP_LOGS=0
